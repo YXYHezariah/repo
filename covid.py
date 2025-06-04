@@ -10,7 +10,7 @@ from pyecharts.commons.utils import JsCode
 st.set_page_config(layout="wide", page_title="🦠 COVID-19 全球疫情分析可视化大屏")
 
 # 数据加载与预处理
-df = pd.read_csv("D:\Jupyter\covid_19_data.csv")
+df = pd.read_csv("./covid_19_data.csv")
 df.columns = [c.strip().replace("/", "_").replace(" ", "_") for c in df.columns]
 df['ObservationDate'] = pd.to_datetime(df['ObservationDate'], errors='coerce')
 df = df.dropna(subset=['ObservationDate', 'Country_Region'])
@@ -19,7 +19,7 @@ df['Province_State'] = df.apply(lambda row: "Unknown" if pd.isna(row['Province_S
 df_grouped = df.groupby(['Country_Region', 'Province_State', 'ObservationDate'], as_index=False)[['Confirmed', 'Deaths', 'Recovered']].max()
 # 全球统计
 world_data = df.groupby(['Country_Region', 'ObservationDate'])[['Confirmed', 'Deaths', 'Recovered']].sum().reset_index()
-data = pd.read_csv("D:/Jupyter/covid_19_data.csv")
+data = pd.read_csv("./covid_19_data.csv")
 data['Country/Region'] = data['Country/Region'].replace({"Hong Kong": "China","Macau": "China","Taiwan": "China","Mainland China": "China","US": "United States","UK": "United Kingdom"})
 country_data = data.groupby('Country/Region')['Confirmed'].sum().reset_index()
 
