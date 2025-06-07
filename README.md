@@ -1,4 +1,4 @@
-# Covid-19 dataset Analysis #
+# The Simple Project For Covid-19 Dataset Analysis #
 ## dataset in Kaggle [Novel Corona Virus 2019 Dataset](https://www.kaggle.com/datasets/sudalairajkumar/novel-corona-virus-2019-dataset)
 ### Column Description
 #### Main file in this dataset is covid_19_data.csv and the detailed descriptions are below.
